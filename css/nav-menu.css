@@ -1,0 +1,136 @@
+/*
+ *
+ * Header
+ *
+ */
+
+.header {
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+   min-height: 56px;
+   transition: min-height 0.3s;
+}
+
+.header__inner {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.header__logo {
+   height: 72px;
+}
+
+.header__title {
+   font-weight: 300;
+   font-size: 4em;
+   margin: 0.5em 0.25em;
+   display: inline-block;
+   color: #212121;
+}
+
+.header__menu {
+   display: none;
+}
+
+.header{
+   margin-bottom: 10px;
+}
+
+/*
+ *
+ * Top Level Navigation
+ *
+ */
+
+.nav {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.nav__list {
+   width: 100%;
+   padding: 0;
+   margin: 0;
+}
+
+.nav__item {
+   box-sizing: border-box;
+   display: inline-block;
+   width: 24%;
+   text-align: center;
+   line-height: 24px;
+   padding: 24px;
+   text-transform: uppercase;
+}
+
+.nav a {
+   text-decoration: none;
+   color: #616161;
+   padding: 1.5em;
+}
+
+.nav a:hover {
+   text-decoration: underline;
+   color: #212121;
+}
+
+#rotate{
+   text-align: center;
+   width: 38px;
+}
+
+#rotate.rotated{
+   transform: rotate(90deg);
+   transition: transform 0.3s ease;
+}
+
+/** Responsive CSS **/
+@media screen and (max-width: 550px) {
+
+   .header__logo {
+      margin-left: 1em;
+   }
+
+   .header__title {
+      margin-left: 0;
+      font-size: 22px;
+      vertical-align: bottom;
+   }
+   .nav {
+      z-index: 10;
+      background-color: #fff;
+      /*width: 300px;*/
+      position: absolute;
+      /* This trasform moves the drawer off canvas. */
+      -webkit-transform: translate(-584px, 0);
+      transform: translate(-584px, 0);
+      /* Optionally, we animate the drawer. */
+      transition: transform 0.3s ease;
+   }
+   .nav.open {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+   }
+   .nav__item {
+      display: list-item;
+      border-bottom: 1px solid #E0E0E0;
+      width: 100%;
+      text-align: left;
+   }
+   .header__menu {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      padding: 2em 2em 0;
+   }
+}
+
+
+@media screen and (min-width: 850px) {
+   main, .header__inner, .nav {
+      width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+   }
+}
