@@ -7,7 +7,7 @@ body, html {
 
 body {
    font-family: Roboto;
-   font-size:   12px;
+   font-size:   14px;
    color:       #424242;
 }
 
@@ -165,7 +165,7 @@ main {
 
    height:        300px;
    border-bottom: 1px solid #e0e0e0;
-   padding:       1em;
+   padding:       0 1em;
 }
 
 .news__title {
@@ -217,11 +217,12 @@ main {
 
 .scores__table th,
 .scores__table td {
-   padding: 1em;
+   padding: 1.4em 1em;
 }
 
 .scores__table th {
    color:            #fff;
+   font-size:        16px;
    font-weight:      300;
    background-color: #78909c;
 }
@@ -247,6 +248,10 @@ main {
    text-align: center;
 }
 
+.scores__table thead th {
+   font-size: 18px;
+}
+
 /*
  *
  * Weather
@@ -254,7 +259,7 @@ main {
  */
 
 .weather {
-   padding: 1em;
+   padding: 1em 1em 0;
 }
 
 .weather__location {
@@ -308,7 +313,7 @@ main {
 
 .recent-news {
    clear:   both;
-   padding: 1em;
+   padding: 0 1em;
 }
 
 .snippet {
@@ -359,3 +364,4 @@ footer a {
    color:           #333;
    padding:         1.5em;
 }
+

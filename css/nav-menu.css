@@ -11,8 +11,8 @@
 }
 
 .header__inner {
-   width: 100%;
-   margin-left: auto;
+   width:        100%;
+   margin-left:  auto;
    margin-right: auto;
 }
 
@@ -22,17 +22,17 @@
 
 .header__title {
    font-weight: 300;
-   font-size: 4em;
-   margin: 0.5em 0.25em;
-   display: inline-block;
-   color: #212121;
+   font-size:   4em;
+   margin:      0.5em 0.25em;
+   display:     inline-block;
+   color:       #212121;
 }
 
 .header__menu {
    display: none;
 }
 
-.header{
+.header {
    margin-bottom: 10px;
 }
 
@@ -43,45 +43,45 @@
  */
 
 .nav {
-   width: 100%;
-   margin-left: auto;
+   width:        100%;
+   margin-left:  auto;
    margin-right: auto;
 }
 
 .nav__list {
-   width: 100%;
+   width:   100%;
    padding: 0;
-   margin: 0;
+   margin:  0;
 }
 
 .nav__item {
-   box-sizing: border-box;
-   display: inline-block;
-   width: 24%;
-   text-align: center;
-   line-height: 24px;
-   padding: 24px;
+   box-sizing:     border-box;
+   display:        inline-block;
+   width:          24%;
+   text-align:     center;
+   line-height:    24px;
+   padding:        24px;
    text-transform: uppercase;
 }
 
 .nav a {
    text-decoration: none;
-   color: #616161;
-   padding: 1.5em;
+   color:           #616161;
+   padding:         1.5em;
 }
 
 .nav a:hover {
    text-decoration: underline;
-   color: #212121;
+   color:           #212121;
 }
 
-#rotate{
+#rotate {
    text-align: center;
-   width: 38px;
+   width:      38px;
 }
 
-#rotate.rotated{
-   transform: rotate(90deg);
+#rotate.rotated {
+   transform:  rotate(90deg);
    transition: transform 0.3s ease;
 }
 
@@ -93,44 +93,165 @@
    }
 
    .header__title {
-      margin-left: 0;
-      font-size: 22px;
+      margin-left:    0;
+      font-size:      22px;
       vertical-align: bottom;
    }
+
    .nav {
-      z-index: 10;
-      background-color: #fff;
+      z-index:           10;
+      background-color:  #fff;
       /*width: 300px;*/
-      position: absolute;
+      position:          absolute;
       /* This trasform moves the drawer off canvas. */
       -webkit-transform: translate(-584px, 0);
-      transform: translate(-584px, 0);
+      transform:         translate(-584px, 0);
       /* Optionally, we animate the drawer. */
-      transition: transform 0.3s ease;
+      transition:        transform 0.3s ease;
    }
+
    .nav.open {
       -webkit-transform: translate(0, 0);
-      transform: translate(0, 0);
+      transform:         translate(0, 0);
    }
+
    .nav__item {
-      display: list-item;
-      border-bottom: 1px solid #E0E0E0;
-      width: 100%;
-      text-align: left;
+      display:       list-item;
+      border-bottom: 1px solid #e0e0e0;
+      width:         100%;
+      text-align:    left;
    }
+
    .header__menu {
-      display: inline-block;
+      display:  inline-block;
       position: absolute;
-      right: 0;
-      padding: 2em 2em 0;
+      right:    0;
+      padding:  2em 2em 0;
+   }
+
+   .scores__location {
+      display: none;
+   }
+
+}
+
+@media screen and (min-width: 551px) {
+   .content {
+      /*padding-top:           50px;*/
+      display:               grid;
+      grid-gap:              5px;
+      box-sizing:            border-box;
+      grid-template-columns: 60% 40%
+                             repeat(2, 1fr);
+      grid-template-areas:   "hero weather"
+                             "top-news top-news"
+                             "scores scores"
+                             "recent-news recent-news";
+   }
+
+   .hero {
+      grid-area: hero;
+   }
+
+   .weather {
+      grid-area: weather;
+      padding: 0 1em;
+   }
+
+
+   .top-news {
+      grid-area: top-news;
+      height: inherit;
+   }
+
+   .scores {
+      grid-area: scores;
+   }
+
+   .recent-news {
+      grid-area: recent-news;
+   }
+
+   .scores__location {
+      display: none;
    }
 }
 
+@media screen and (min-width: 700px) {
+   .content {
+      /*padding-top:           50px;*/
+      display:               grid;
+      grid-gap:              5px;
+      box-sizing:            border-box;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-areas:   "hero top-news"
+                             "scores weather"
+                             "recent-news recent-news";
+   }
+
+   .hero {
+      grid-area:            hero;
+      grid-column-start:    0;
+      grid-column:     span 5;
+      /*grid-row-start:       1;*/
+      /*grid-row-end:         1;*/
+   }
+
+   .top-news {
+      grid-area:            top-news;
+      height:               inherit;
+      grid-column-start:    6;
+      grid-column:     span 5;
+      /*grid-row-start:       1;*/
+      /*grid-row-end:         1;*/
+   }
+
+   .scores {
+      grid-area:            scores;
+      grid-column-start:    0;
+      grid-column:     span 6;
+      /*grid-row-start:       2;*/
+      /*grid-row-end:         1;*/
+   }
+
+   .weather {
+      padding: 1em 1em 0;
+      grid-area:              weather;
+      grid-column-start:      6;
+      grid-column:       span 4;
+      /*grid-row-start:       2;*/
+      /*grid-row-end:         1;*/
+   }
+
+   .recent-news {
+      grid-area:            recent-news;
+      grid-column-start:    1;
+      grid-column:     span 10;
+      /*grid-row-start:       3;*/
+      /*grid-row-end:         1;*/
+   }
+
+
+   .scores__location {
+      display: table-cell;
+   }
+}
 
 @media screen and (min-width: 850px) {
    main, .header__inner, .nav {
-      width: 850px;
-      margin-left: auto;
+      width:        850px;
+      margin-left:  auto;
       margin-right: auto;
    }
+
+   .scores__location {
+      display: table-cell;
+   }
+}
+
+.truncate {
+   width: 700px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }

@@ -17,7 +17,7 @@
       });
 
       $main.on('click', function() {
-         $drawer.removeClass('open');
+         document.querySelector('.nav').removeClass('open');
       });
    });
 
